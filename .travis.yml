@@ -1,0 +1,16 @@
+matrix:
+  include:
+    - language: c
+      
+      before_install:
+        - sudo apt-get install -y valgrind
+        - sudo apt-get install -y libevent-dev
+        - sudo apt-get install -y librabbitmq-dev
+
+      script:
+        - make cov
+        - make test
+        - make gencov
+
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
