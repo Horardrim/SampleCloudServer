@@ -5,7 +5,7 @@ all:
 clean:
 	@rm -rf output
 	@make -C main clean
-#	@rm -f `find -name "*.gcov"` test/valgrind.log
+	@rm -f `find -name "*.gcov"` test/valgrind.log
 
 cov:
 	@make -C main cov
