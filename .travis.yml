@@ -3,6 +3,7 @@ matrix:
     - language: c
       
       before_install:
+        - git clone https://github.com/Horardrim/matrix_c
         - sudo apt-get install -y valgrind
         - sudo apt-get install -y libevent-dev
         - sudo apt-get install -y librabbitmq-dev
