@@ -4,6 +4,8 @@ matrix:
       
       before_install:
         - git clone https://github.com/Horardrim/matrix_c
+        - cd matrix_c && make
+
         - sudo apt-get install -y valgrind
         - sudo apt-get install -y libevent-dev
         - sudo apt-get install -y librabbitmq-dev
