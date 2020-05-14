@@ -15,10 +15,10 @@ matrix:
         - cd hm-matrix-c-1.0.0
         - export MATRIX_C_VERSION=`grep "define MATRIX_C_VERSION" version.h | awk -F "\"" '{print $2}'`
         - make
-        - cp ../output/libhm-matrix-c.so.1.0.0 /lib/x86_64-linux-gnu/
-        - ln -s  /lib/x86_64-linux-gnu/libhm-matrix-c.so.1.0.0  /lib/x86_64-linux-gnu/libhm-matrix-c.so
-        - mkdir /usr/include/matrix-c
-        - cp *.h /usr/include/matrix_c
+        - sudo cp ../output/libhm-matrix-c.so.1.0.0 /lib/x86_64-linux-gnu/
+        - sudo ln -s  /lib/x86_64-linux-gnu/libhm-matrix-c.so.1.0.0  /lib/x86_64-linux-gnu/libhm-matrix-c.so
+        - sudo mkdir /usr/include/matrix-c
+        - sudo cp *.h /usr/include/matrix_c
 
       script:
         - make cov
