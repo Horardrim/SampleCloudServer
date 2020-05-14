@@ -17,7 +17,7 @@ matrix:
         - make
         - sudo cp ../output/libhm-matrix-c.so.1.0.0 /lib/x86_64-linux-gnu/
         - sudo ln -s  /lib/x86_64-linux-gnu/libhm-matrix-c.so.1.0.0  /lib/x86_64-linux-gnu/libhm-matrix-c.so
-        - sudo mkdir /usr/include/matrix-c
+        - sudo mkdir /usr/include/matrix_c
         - sudo cp *.h /usr/include/matrix_c
 
       script:
