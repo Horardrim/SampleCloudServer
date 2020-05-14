@@ -13,6 +13,7 @@ matrix:
         - svn checkout https://github.com/Horardrim/matrix_c/trunk/rpmbuild/SOURCES/
         - tar -zxvf SOURCES/hm-matrix-c-1.0.0.tar.gz
         - cd hm-matrix-c-1.0.0
+        - export MATRIX_C_VERSION=`grep "define MATRIX_C_VERSION" version.h | awk -F "\"" '{print $2}'`
         - make
         - cp ../output/libhm-matrix-c.so.1.0.0 /lib/x86_64-linux-gnu/
         - ln -s  /lib/x86_64-linux-gnu/libhm-matrix-c.so.1.0.0  /lib/x86_64-linux-gnu/libhm-matrix-c.so
