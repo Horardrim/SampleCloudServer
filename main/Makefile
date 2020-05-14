@@ -8,7 +8,7 @@ DEPS := $(SRC:./%.c=./$(BUILD_OUTPUT_DIR)/%.d)
 CFLAGS = -g -Wall -Werror 
 INCLUDE_PATH = 
 LD_FLAGS =
-LIBS = -levent -levent_pthreads
+LIBS = -levent -levent_pthreads -lhm-matrix-c
 
 VERSION = `bash version.sh`
 
