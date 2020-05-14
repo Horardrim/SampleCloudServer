@@ -3,12 +3,21 @@ matrix:
     - language: c
       
       before_install:
-        - git clone https://github.com/Horardrim/matrix_c
-        - cd matrix_c && make
-
+        - sudo apt-get install -y rpm
         - sudo apt-get install -y valgrind
         - sudo apt-get install -y libevent-dev
         - sudo apt-get install -y librabbitmq-dev
+        - sudo apt-get install -y subversion
+
+        #  install matrix library
+        - svn checkout https://github.com/Horardrim/matrix_c/trunk/rpmbuild/SOURCES/
+        - tar -zxvf SOURCES/hm-matrix-c-1.0.0.tar.gz
+        - cd hm-matrix-c-1.0.0
+        - make
+        - cp ../output/libhm-matrix-c.so.1.0.0 /lib/x86_64-linux-gnu/
+        - ln -s  /lib/x86_64-linux-gnu/libhm-matrix-c.so.1.0.0  /lib/x86_64-linux-gnu/libhm-matrix-c.so
+        - mkdir /usr/include/matrix-c
+        - cp *.h /usr/include/matrix_c
 
       script:
         - make cov
