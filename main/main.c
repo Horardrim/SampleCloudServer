@@ -7,6 +7,8 @@
 
 #include <matrix_c/hm_char_matrix.h>
 
+#include "amqp_sample.h"
+
 int main(int argc, char ** argv)
 {
     struct event_base *base;
@@ -19,5 +21,7 @@ int main(int argc, char ** argv)
     test_matrix->set_matrix_value(test_matrix, '%', 5, 5);
     test_matrix->display_matrix(test_matrix);
     hm_char_matrix_t_(test_matrix);
+
+    // amqp_sample_run();
     return 0;
 }
